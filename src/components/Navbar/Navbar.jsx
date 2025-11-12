@@ -24,9 +24,11 @@ function Navbar() {
     };
 
     const navLinks = [
+        { label: 'Home', path: '/' },
         { label: 'About Us', path: '/about' },
+        { label: 'Services', path: '/Service' },
         { label: 'Tutorials', path: '/youtube' },
-        { label: 'How To', path: '/tutorials' },
+        { label: 'How To', path: '/howto' },
         { label: 'Contact', path: '/contact' },
     ];
 

@@ -10,13 +10,15 @@ import Download from './components/Download/Download'
 import Form from './components/Form/Form'
 import Footer from './components/Footer/Footer'
 import Privacy from './components/Privacy/Privacy'
+import Services from './components/Services/Services'
 import About from './components/About/About'
+import HowTo from './components/HowTo/HowTo'
 
 function Home() {
   return (
     <>
       <Hero />
-      <About />
+      <Services />
       <ExpertServices />
       <BecomePartner />
       <Vendor />
@@ -34,6 +36,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Form />} />
         <Route path="/about" element={<About />} />
+        <Route path="/howto" element={<HowTo />} />
         <Route path="/youtube" element={<Youtube />} />
       </Routes>
     </Router>

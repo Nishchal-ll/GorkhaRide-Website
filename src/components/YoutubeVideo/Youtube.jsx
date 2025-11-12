@@ -5,6 +5,7 @@ import Ride from '../../assets/Ride.png'
 import Rider from '../../assets/Rider.png'
 import Vendor from '../../assets/Vendor.png'
 import Provider from '../../assets/Provider.png'
+import Footer from '../Footer/Footer'
 
 const YouTubeVideoSection = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -448,6 +449,7 @@ const YouTubeVideoSection = () => {
           </div>
         </div>
       </section>
+      <Footer/>
     </>
   )
 }
