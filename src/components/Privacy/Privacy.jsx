@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Mail, Shield, Users, Lock, Eye, FileText, UserCheck, Settings, AlertCircle, Phone } from 'lucide-react';
+import { ChevronDown, ChevronUp, Mail, Shield, Users, Lock, Eye, FileText, UserCheck, Settings, AlertCircle, Sparkles } from 'lucide-react';
 
 const PrivacyPolicy = () => {
   const [expandedSection, setExpandedSection] = useState(null);
@@ -9,11 +9,6 @@ const PrivacyPolicy = () => {
     setExpandedSection(expandedSection === section ? null : section);
   };
 
-  const tabs = [
-    { id: 'store', label: 'Store', icon: <FileText className="w-4 h-4" /> },
-    { id: 'user', label: 'User', icon: <Users className="w-4 h-4" /> },
-    { id: 'driver', label: 'Driver', icon: <UserCheck className="w-4 h-4" /> }
-  ];
 
   const keyPoints = [
     { icon: <Shield className="w-6 h-6" />, title: "Personal Information Processing", desc: "We process personal information based on your interactions with our services" },
@@ -49,133 +44,161 @@ const PrivacyPolicy = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 mt-36">
-      {/* Header */}
-      <div className="bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 text-white">
-        <div className="container mx-auto px-4 py-8">
+    <div className="min-h-screen bg-white mt-16">
+      {/* Animated Header with Gradient */}
+      <div className="relative bg-gradient-to-r from-green-400 via-green-500 to-green-600 overflow-hidden">
+        {/* Decorative circles */}
+        <div className="absolute top-0 left-0 w-72 h-72 bg-white opacity-10 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-white opacity-10 rounded-full translate-x-1/3 translate-y-1/3"></div>
+        
+        <div className="container mx-auto px-4 py-16 relative z-10">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Gorkha Ride Privacy Policy
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-white rounded-full mb-6 shadow-lg">
+              <Shield className="w-10 h-10 text-green-500" />
+            </div>
+            <h1 className="text-5xl md:text-6xl font-bold mb-4 text-white">
+              Privacy Policy
             </h1>
-            <p className="text-xl text-green-100 max-w-3xl mx-auto">
+            <p className="text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
               Your privacy matters to us. Learn how we collect, use, and protect your information.
             </p>
           </div>
         </div>
       </div>
 
-      {/* Tab Navigation */}
-      <div className="bg-white shadow-sm border-b">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-center space-x-1">
-            {tabs.map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center space-x-2 px-6 py-4 font-medium transition-all duration-200 border-b-2 ${
-                  activeTab === tab.id
-                    ? 'border-green-500 text-green-600 bg-green-50'
-                    : 'border-transparent text-gray-600 hover:text-green-600 hover:bg-green-50'
-                }`}
-              >
-                {tab.icon}
-                <span>{tab.label}</span>
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
+ 
 
-      <div className="container mx-auto px-4 py-8">
-        {/* Key Points Summary */}
-        <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
-          <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">
-            Summary of Key Points
-          </h2>
+      <div className="container mx-auto px-4 py-12">
+        {/* Key Points with Card Hover Effects */}
+        <div className="mb-16">
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center space-x-2 mb-4">
+              <Sparkles className="w-6 h-6 text-green-500" />
+              <h2 className="text-3xl font-bold bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">
+                Summary of Key Points
+              </h2>
+              <Sparkles className="w-6 h-6 text-green-500" />
+            </div>
+            <p className="text-gray-600">Everything you need to know at a glance</p>
+          </div>
+          
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {keyPoints.map((point, index) => (
-              <div key={index} className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 border border-green-100 hover:shadow-md transition-shadow">
-                <div className="text-green-600 mb-3">{point.icon}</div>
-                <h3 className="font-semibold text-gray-800 mb-2">{point.title}</h3>
-                <p className="text-gray-600 text-sm">{point.desc}</p>
+              <div 
+                key={index} 
+                className="group bg-white rounded-2xl p-6 border-2 border-green-100 hover:border-green-400 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 cursor-pointer"
+              >
+                <div className="w-14 h-14 bg-gradient-to-r from-green-400 to-green-600 rounded-xl flex items-center justify-center mb-4 text-white group-hover:scale-110 transition-transform duration-300">
+                  {point.icon}
+                </div>
+                <h3 className="font-bold text-gray-800 mb-2 text-lg">{point.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{point.desc}</p>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Contact Information */}
-        <div className="bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl shadow-lg p-8 mb-8 text-dark">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <div>
-              <h3 className="text-2xl font-bold mb-2">Questions or Concerns?</h3>
-              <p className="text-green-100">
+        {/* Contact Card with Modern Design */}
+        <div className="bg-gradient-to-r from-green-400 to-green-600 rounded-3xl shadow-2xl p-8 mb-16 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-10 rounded-full translate-x-20 -translate-y-20"></div>
+          <div className="relative z-10 flex flex-col md:flex-row items-center justify-between">
+            <div className="text-white mb-6 md:mb-0">
+              <h3 className="text-3xl font-bold mb-2">Questions or Concerns?</h3>
+              <p className="text-white/90 text-lg">
                 If you don't agree with our policies, please don't use our services.
               </p>
             </div>
-            <div className="flex items-center space-x-2 mt-4 md:mt-0 ">
+            <a 
+              href="mailto:app.gorkharide@gmail.com"
+              className="flex items-center space-x-3 bg-white text-green-600 px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all duration-300 hover:scale-105"
+            >
               <Mail className="w-5 h-5" />
-              <a href="mailto:app.gorkharide@gmail.com" className="underline hover:no-underline ">
-                app.gorkharide@gmail.com
-              </a>
-            </div>
+              <span>app.gorkharide@gmail.com</span>
+            </a>
           </div>
         </div>
 
-        {/* Data Collection Overview */}
-        <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6">Information We Collect</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div>
-              <h3 className="text-lg font-semibold text-green-600 mb-4">Personal Information Types</h3>
-              <div className="space-y-2">
+        {/* Data Collection with Split Design */}
+        <div className="bg-white rounded-3xl shadow-xl p-8 mb-16 border border-gray-100">
+          <h2 className="text-3xl font-bold bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent mb-8">
+            Information We Collect
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-gradient-to-br from-green-50 to-white rounded-2xl p-6 border border-green-200">
+              <div className="flex items-center space-x-3 mb-6">
+                <div className="w-10 h-10 bg-gradient-to-r from-green-400 to-green-600 rounded-lg flex items-center justify-center">
+                  <FileText className="w-5 h-5 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-800">Personal Information Types</h3>
+              </div>
+              <div className="space-y-3">
                 {dataTypes.map((type, index) => (
-                  <div key={index} className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span className="text-gray-700">{type}</span>
+                  <div key={index} className="flex items-center space-x-3 group">
+                    <div className="w-2 h-2 bg-green-500 rounded-full group-hover:scale-150 transition-transform"></div>
+                    <span className="text-gray-700 group-hover:text-green-600 transition-colors">{type}</span>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 border border-green-100">
-              <h3 className="text-lg font-semibold text-green-600 mb-4">Image Information</h3>
-              <div className="space-y-3">
-                <div>
-                  <p className="font-medium text-gray-800">Registration Images</p>
-                  <p className="text-sm text-gray-600">Stored for verification purposes</p>
+            
+            <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-2xl p-6 text-white">
+              <div className="flex items-center space-x-3 mb-6">
+                <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center backdrop-blur-sm">
+                  <Eye className="w-5 h-5 text-white" />
                 </div>
-                <div>
-                  <p className="font-medium text-gray-800">Ride Documentation</p>
-                  <p className="text-sm text-gray-600">Meter images and documents for calculation and verification</p>
+                <h3 className="text-xl font-bold">Image Information</h3>
+              </div>
+              <div className="space-y-4">
+                <div className="bg-white/10 rounded-xl p-4 backdrop-blur-sm">
+                  <p className="font-semibold mb-1">Registration Images</p>
+                  <p className="text-sm text-white/80">Stored for verification purposes</p>
+                </div>
+                <div className="bg-white/10 rounded-xl p-4 backdrop-blur-sm">
+                  <p className="font-semibold mb-1">Ride Documentation</p>
+                  <p className="text-sm text-white/80">Meter images and documents for calculation and verification</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Detailed Sections */}
-        <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6">Detailed Information</h2>
-          <div className="space-y-4">
+        {/* Accordion Sections with Modern Style */}
+        <div className="bg-white rounded-3xl shadow-xl p-8 mb-16 border border-gray-100">
+          <h2 className="text-3xl font-bold bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent mb-8">
+            Detailed Information
+          </h2>
+          <div className="space-y-3">
             {sections.map((section) => (
-              <div key={section.id} className="border border-gray-200 rounded-lg">
+              <div 
+                key={section.id} 
+                className={`border-2 rounded-2xl overflow-hidden transition-all duration-300 ${
+                  expandedSection === section.id 
+                    ? 'border-green-400 shadow-lg' 
+                    : 'border-gray-200 hover:border-green-300'
+                }`}
+              >
                 <button
                   onClick={() => toggleSection(section.id)}
-                  className="w-full flex items-center justify-between p-4 text-left hover:bg-green-50 transition-colors rounded-lg"
+                  className="w-full flex items-center justify-between p-5 text-left hover:bg-green-50 transition-colors"
                 >
-                  <div className="flex items-center space-x-3">
-                    <div className="text-green-600">{section.icon}</div>
-                    <span className="font-medium text-gray-800">{section.title}</span>
+                  <div className="flex items-center space-x-4">
+                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 ${
+                      expandedSection === section.id
+                        ? 'bg-gradient-to-r from-green-400 to-green-600 text-white'
+                        : 'bg-green-100 text-green-600'
+                    }`}>
+                      {section.icon}
+                    </div>
+                    <span className="font-semibold text-gray-800 text-lg">{section.title}</span>
                   </div>
-                  {expandedSection === section.id ? (
-                    <ChevronUp className="w-5 h-5 text-gray-500" />
-                  ) : (
-                    <ChevronDown className="w-5 h-5 text-gray-500" />
-                  )}
+                  <div className={`transition-transform duration-300 ${expandedSection === section.id ? 'rotate-180' : ''}`}>
+                    <ChevronDown className="w-6 h-6 text-green-500" />
+                  </div>
                 </button>
                 {expandedSection === section.id && (
-                  <div className="px-4 pb-4">
-                    <div className="bg-gray-50 rounded-lg p-4">
-                      <p className="text-gray-700">
+                  <div className="px-5 pb-5">
+                    <div className="bg-gradient-to-r from-green-50 to-white rounded-xl p-6 border-l-4 border-green-500">
+                      <p className="text-gray-700 leading-relaxed">
                         {section.id === 1 && "We collect personal information that you voluntarily provide to us when you register, use our services, or contact us. This includes names, email addresses, profile information, contact details, geolocation data, payment information, and communication records."}
                         {section.id === 2 && "We process your information to provide, improve, and administer our services, communicate with you, prevent fraud, and comply with legal requirements. Processing is done with valid legal reasons and your consent where required."}
                         {section.id === 3 && "We may share your data with third-party vendors (Ad Networks, Testing Tools, Firebase analytics), during business transfers, and with Google Maps Platform APIs for location services."}
@@ -194,52 +217,55 @@ const PrivacyPolicy = () => {
           </div>
         </div>
 
-        {/* User Rights and Actions */}
-        <div className="grid md:grid-cols-2 gap-8 mb-8">
-          <div className="bg-white rounded-2xl shadow-lg p-8">
-            <h3 className="text-xl font-bold text-gray-800 mb-4">Your Rights</h3>
-            <div className="space-y-4">
-              <div className="flex items-start space-x-3">
-                <div className="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
-                <div>
-                  <p className="font-medium text-gray-800">Withdraw Consent</p>
-                  <p className="text-sm text-gray-600">You can withdraw consent for data processing at any time</p>
-                </div>
+        {/* User Rights with Icon Cards */}
+        <div className="bg-gradient-to-br from-white to-green-50 rounded-3xl shadow-xl p-8 mb-16 border border-green-100">
+          <h3 className="text-3xl font-bold bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent mb-8">
+            Your Rights
+          </h3>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-white rounded-2xl p-6 border-2 border-green-200 hover:border-green-400 transition-all duration-300 hover:shadow-xl">
+              <div className="w-12 h-12 bg-gradient-to-r from-green-400 to-green-600 rounded-xl flex items-center justify-center mb-4">
+                <Lock className="w-6 h-6 text-white" />
               </div>
-              <div className="flex items-start space-x-3">
-                <div className="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
-                <div>
-                  <p className="font-medium text-gray-800">Access Your Data</p>
-                  <p className="text-sm text-gray-600">Review and change information in your account</p>
-                </div>
+              <p className="font-bold text-gray-800 mb-2 text-lg">Withdraw Consent</p>
+              <p className="text-sm text-gray-600">You can withdraw consent for data processing at any time</p>
+            </div>
+            <div className="bg-white rounded-2xl p-6 border-2 border-green-200 hover:border-green-400 transition-all duration-300 hover:shadow-xl">
+              <div className="w-12 h-12 bg-gradient-to-r from-green-400 to-green-600 rounded-xl flex items-center justify-center mb-4">
+                <Eye className="w-6 h-6 text-white" />
               </div>
-              <div className="flex items-start space-x-3">
-                <div className="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
-                <div>
-                  <p className="font-medium text-gray-800">Delete Account</p>
-                  <p className="text-sm text-gray-600">Terminate your account and delete your information</p>
-                </div>
+              <p className="font-bold text-gray-800 mb-2 text-lg">Access Your Data</p>
+              <p className="text-sm text-gray-600">Review and change information in your account</p>
+            </div>
+            <div className="bg-white rounded-2xl p-6 border-2 border-green-200 hover:border-green-400 transition-all duration-300 hover:shadow-xl">
+              <div className="w-12 h-12 bg-gradient-to-r from-green-400 to-green-600 rounded-xl flex items-center justify-center mb-4">
+                <AlertCircle className="w-6 h-6 text-white" />
               </div>
+              <p className="font-bold text-gray-800 mb-2 text-lg">Delete Account</p>
+              <p className="text-sm text-gray-600">Terminate your account and delete your information</p>
             </div>
           </div>
-
         </div>
 
-        {/* Footer */}
-        <div className="bg-gray-800 rounded-2xl shadow-lg p-8 text-white">
-          <div className="text-center">
-            <h3 className="text-xl font-bold mb-4">Stay Informed</h3>
-            <p className="text-gray-300 mb-4">
+        {/* Footer with Gradient Background */}
+        <div className="bg-gradient-to-r from-gray-800 to-gray-900 rounded-3xl shadow-2xl p-10 text-white relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-green-500 opacity-10 rounded-full translate-x-1/2 -translate-y-1/2"></div>
+          <div className="relative z-10 text-center">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-green-400 to-green-600 rounded-full mb-6">
+              <Shield className="w-8 h-8 text-white" />
+            </div>
+            <h3 className="text-3xl font-bold mb-4">Stay Informed</h3>
+            <p className="text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
               We may update this privacy notice from time to time. The updated version will be effective as soon as it is accessible.
             </p>
-            <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8">
-              <div className="flex items-center space-x-2">
+            <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-12">
+              <div className="flex items-center space-x-3 bg-white/10 px-6 py-3 rounded-full backdrop-blur-sm">
                 <Mail className="w-5 h-5 text-green-400" />
-                <span className="text-sm">app.gorkharide@gmail.com</span>
+                <span className="text-sm font-medium">app.gorkharide@gmail.com</span>
               </div>
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-3 bg-white/10 px-6 py-3 rounded-full backdrop-blur-sm">
                 <Shield className="w-5 h-5 text-green-400" />
-                <span className="text-sm">Last Updated: 2024</span>
+                <span className="text-sm font-medium">Last Updated: 2024</span>
               </div>
             </div>
           </div>

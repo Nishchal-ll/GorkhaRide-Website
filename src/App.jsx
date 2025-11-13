@@ -5,7 +5,6 @@ import Hero from './components/Hero/Hero'
 import ExpertServices from './components/ExpertServices/Expertservices'
 import BecomePartner from './components/BecomePartner/BecomePartner'
 import Youtube from './components/YoutubeVideo/Youtube'
-import Vendor from './components/Vendor/Vendor'
 import Download from './components/Download/Download'
 import Form from './components/Form/Form'
 import Footer from './components/Footer/Footer'
@@ -22,7 +21,6 @@ function Home() {
       <Services />
       <ExpertServices />
       <BecomePartner />
-      <Vendor />
       <Download />
       <Footer />
     </>
@@ -40,6 +38,7 @@ function App() {
         <Route path="/howto" element={<HowTo />} />
         <Route path="/youtube" element={<Youtube />} />
         <Route path="/service" element={<Service />} />
+        <Route path="/privacy" element={<Privacy />} />
       </Routes>
     </Router>
   )

@@ -34,10 +34,8 @@ const Footer = () => {
               <ul className="space-y-2 text-gray-400">
                 <li><a href="#expert-services" className="hover:text-white">Expert Services</a></li>
                 <li><a href="#become-partner" className="hover:text-white">Become A Partner</a></li>
-                <li><a href="#youtube-videos" className="hover:text-white">How To Videos</a></li>
                 <li><a href="#download" className="hover:text-white">Download</a></li>
-                <li><a href="#contact" className="hover:text-white">Contact</a></li>
-                <li><a href="#privacy" className="hover:text-white">Privacy Policy</a></li>
+                <li><a href="/privacy" className="hover:text-white">Privacy Policy</a></li>
               </ul>
             </div>
 
