@@ -13,6 +13,7 @@ import Privacy from './components/Privacy/Privacy'
 import Services from './components/Services/Services'
 import About from './components/About/About'
 import HowTo from './components/HowTo/HowTo'
+import Service from './components/Service/Service'
 
 function Home() {
   return (
@@ -38,6 +39,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/howto" element={<HowTo />} />
         <Route path="/youtube" element={<Youtube />} />
+        <Route path="/service" element={<Service />} />
       </Routes>
     </Router>
   )

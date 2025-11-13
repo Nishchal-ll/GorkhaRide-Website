@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Bike, Car, UtensilsCrossed, Package, ShoppingCart, Wrench, Users, Clock, Shield, DollarSign, Heart, ChevronDown, Menu, X, ArrowRight, CheckCircle, MapPin, Smartphone } from 'lucide-react';
 import Footer from '../Footer/Footer';
+import { href } from 'react-router-dom';
 
 export default function GorkhaRideAbout() {
   const [expandedService, setExpandedService] = useState(null);
@@ -139,13 +140,11 @@ export default function GorkhaRideAbout() {
             In today's busy life, traveling from one place to another should be easy, safe, and affordable. Gorkha Ride makes it simple to get around Nepal without stress. Whether you're heading to work, meeting friends, or returning home after a long day, Gorkha Ride connects you with verified drivers quickly and easily.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <button className="group px-8 py-4 bg-gradient-to-r from-green-500 to-green-300 text-white rounded-full font-bold shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center space-x-2">
+            <button onClick={() => window.location.href = "https://gorkharide.github.io/Gorkha-Ride/"} className="group px-8 py-4 bg-gradient-to-r from-green-500 to-green-300 text-white rounded-full font-bold shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center space-x-2">
               <span>Download App</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
-            <button className="px-8 py-4 border-2 border-green-500 text-green-600 rounded-full font-bold hover:bg-green-50 transition-all duration-300">
-              Learn More
-            </button>
+          
           </div>
         </div>
       </section>
@@ -164,7 +163,7 @@ export default function GorkhaRideAbout() {
 
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-green-300 transform hover:-translate-y-2">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-green-400 to-emerald-500 rounded-2xl text-white mb-6 shadow-lg">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-green-400 to-green-500 rounded-2xl text-white mb-6 shadow-lg">
                 <DollarSign className="w-8 h-8" />
               </div>
               <h4 className="text-2xl font-bold text-gray-900 mb-3">Affordable fares</h4>
@@ -172,7 +171,7 @@ export default function GorkhaRideAbout() {
             </div>
 
             <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-green-300 transform hover:-translate-y-2">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-green-400 to-emerald-500 rounded-2xl text-white mb-6 shadow-lg">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-green-400 to-green-500 rounded-2xl text-white mb-6 shadow-lg">
                 <Shield className="w-8 h-8" />
               </div>
               <h4 className="text-2xl font-bold text-gray-900 mb-3">Safety first</h4>
@@ -180,7 +179,7 @@ export default function GorkhaRideAbout() {
             </div>
 
             <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-green-300 transform hover:-translate-y-2">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-green-400 to-emerald-500 rounded-2xl text-white mb-6 shadow-lg">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-green-400 to-green-500 rounded-2xl text-white mb-6 shadow-lg">
                 <Smartphone className="w-8 h-8" />
               </div>
               <h4 className="text-2xl font-bold text-gray-900 mb-3">User-friendly app</h4>
@@ -235,7 +234,7 @@ export default function GorkhaRideAbout() {
                 className="bg-white rounded-3xl p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-green-300 group transform hover:-translate-y-2"
                 style={{ animationDelay: `${idx * 100}ms` }}
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-green-400 to-emerald-500 rounded-2xl text-white mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-green-400 to-green-500 rounded-2xl text-white mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg">
                   {benefit.icon}
                 </div>
                 <h4 className="text-xl font-bold text-gray-900 mb-3">{benefit.title}</h4>
@@ -279,7 +278,7 @@ export default function GorkhaRideAbout() {
                 key={idx}
                 className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-green-200 hover:border-green-400 transform hover:-translate-y-2"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full text-white text-2xl font-bold mb-6 shadow-lg">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full text-white text-2xl font-bold mb-6 shadow-lg">
                   {idx + 1}
                 </div>
                 <p className="text-gray-800 font-semibold text-lg leading-relaxed">{goal}</p>
@@ -303,7 +302,7 @@ export default function GorkhaRideAbout() {
               <p className="text-2xl font-bold mb-8">
                 📲 Download the Gorkha Ride App today and enjoy a safe, affordable, and user-friendly experience!
               </p>
-              <button className="group bg-white text-green-600 px-10 py-5 rounded-full font-bold text-lg hover:bg-green-50 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 flex items-center space-x-3 mx-auto mb-8">
+              <button onClick={() => window.location.href = "https://gorkharide.github.io/Gorkha-Ride/"} className="group bg-white text-green-600 px-10 py-5 rounded-full font-bold text-lg hover:bg-green-50 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 flex items-center space-x-3 mx-auto mb-8">
                 <span>Download Now</span>
                 <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
               </button>

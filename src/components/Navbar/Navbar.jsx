@@ -26,9 +26,9 @@ function Navbar() {
     const navLinks = [
         { label: 'Home', path: '/' },
         { label: 'About Us', path: '/about' },
-        { label: 'Services', path: '/Service' },
+        { label: 'Services', path: '/service' },
         { label: 'Tutorials', path: '/youtube' },
-        { label: 'How To', path: '/howto' },
+        { label: 'How To Use', path: '/howto' },
         { label: 'Contact', path: '/contact' },
     ];
 

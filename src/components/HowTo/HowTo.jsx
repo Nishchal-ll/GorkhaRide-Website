@@ -193,25 +193,25 @@ export default function HowTo() {
                 icon: MapPin,
                 title: 'Selecting Pickup Location',
                 desc: 'Open the app and allow GPS access, or enter your pickup points manually.',
-                color: 'from-green-500 to-emerald-500'
+                color: 'from-green-300 to-green-600'
               },
               {
                 icon: Navigation,
                 title: 'Choosing Your Destination',
                 desc: 'Type in your destination in the search bar.',
-                color: 'from-green-500 to-emerald-500'
+                color: 'from-green-300 to-green-600'
               },
               {
                 icon: Smartphone,
                 title: 'Ride Types and Options',
                 desc: 'The app offers bike rides, car rides, and premium options depending on your preference and budget.',
-                color: 'from-green-500 to-emerald-500'
+                color: 'from-green-300 to-green-600'
               },
               {
                 icon: CheckCircle,
                 title: 'Confirming Your Ride',
                 desc: 'Check fare details and estimated arrival time → Tap Confirm Ride.',
-                color: 'from-green-500 to-emerald-500'
+                color: 'from-green-300 to-green-600'
               }
             ].map((item, idx) => (
               <div key={idx} className="group relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-gray-100 hover:border-green-300">
@@ -312,10 +312,10 @@ export default function HowTo() {
           
           <div className="grid md:grid-cols-2 gap-6">
             {[
-              { tip: 'Always check driver ratings before confirming.', color: 'from-green-500 to-emerald-500' },
-              { tip: 'Use digital payments to avoid change issues.', color: 'from-green-500 to-emerald-500' },
-              { tip: 'Share your ride details during late-night travel.', color: 'from-green-500 to-emerald-500' },
-              { tip: 'Double-check pickup and drop-off points for accuracy.', color: 'from-green-500 to-emerald-500' }
+              { tip: 'Always check driver ratings before confirming.', color: 'from-green-300 to-green-500' },
+              { tip: 'Use digital payments to avoid change issues.', color: 'from-green-300 to-green-500' },
+              { tip: 'Share your ride details during late-night travel.', color: 'from-green-300 to-green-500' },
+              { tip: 'Double-check pickup and drop-off points for accuracy.', color: 'from-green-300 to-green-500' }
             ].map((item, idx) => (
               <div key={idx} className="group relative">
                 <div className={`absolute -inset-0.5 bg-gradient-to-r ${item.color} rounded-2xl blur opacity-30 group-hover:opacity-50 transition-opacity`}></div>
