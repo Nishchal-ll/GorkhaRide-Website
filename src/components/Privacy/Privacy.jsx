@@ -66,8 +66,6 @@ const PrivacyPolicy = () => {
         </div>
       </div>
 
- 
-
       <div className="container mx-auto px-4 py-12">
         {/* Key Points with Card Hover Effects */}
         <div className="mb-16">

@@ -28,7 +28,7 @@ function Navbar() {
         { label: 'About Us', path: '/about' },
         { label: 'Services', path: '/service' },
         { label: 'Tutorials', path: '/youtube' },
-        { label: 'How To Use', path: '/howto' },
+        { label: 'How To Use', path: '/howtouse' },
         { label: 'Contact', path: '/contact' },
     ];
 
