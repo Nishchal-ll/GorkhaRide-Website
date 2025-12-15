@@ -1,5 +1,7 @@
 # 🚗 Gorkha Ride
 
+![image alt] (https://github.com/Nishchal-ll/GorkhaRide/blob/main/111.png?raw=true)
+
 Gorkha Ride is a comprehensive platform offering a wide range of services to make daily life easier and more convenient. Our goal is to connect people and provide reliable, efficient, and affordable services across multiple domains.
 
 ## 🛠️ Services Offered
@@ -22,3 +24,4 @@ Gorkha Ride is a comprehensive platform offering a wide range of services to mak
 ---
 
 Experience convenience at your fingertips with **Gorkha Ride** — connecting people and services, one ride at a time. 🚀
+
