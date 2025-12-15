@@ -1,6 +1,6 @@
 #  Gorkha Ride
 
-![image alt](https://github.com/Nishchal-ll/GorkhaRide/blob/main/111.png?raw=true)
+![image alt](https://github.com/Nishchal-ll/GorkhaRide/blob/ff1cd93f14fc357ab680ab2bc5a525701e05c2a8/webimage.png)
 
 
 Gorkha Ride is a comprehensive platform offering a wide range of services to make daily life easier and more convenient. Our goal is to connect people and provide reliable, efficient, and affordable services across multiple domains.
